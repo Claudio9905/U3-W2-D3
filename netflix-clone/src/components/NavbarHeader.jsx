@@ -157,7 +157,9 @@ const NavbarHeader = () => {
                 <input
                   className="form-control me-2 rounded-5"
                   type="search"
-                  placeholder="Search"
+                  placeholder={
+                    location.pathname === `/` ? `Cerca Film` : `Cerca serie Tv`
+                  }
                   aria-label="Search"
                 />
                 <button
