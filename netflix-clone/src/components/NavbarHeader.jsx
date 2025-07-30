@@ -1,9 +1,12 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarHeader = () => {
+  const location = useLocation();
+  console.log("Location", location);
+
   return (
     <>
       {/* <nav className="navbar navbar-expand-lg bg-moreDark">
@@ -88,31 +91,66 @@ const NavbarHeader = () => {
       </nav> */}
       <Navbar expand="lg" className="bg-moreDark">
         <Container>
-          <Navbar.Brand href="#home" id="logo-box">
+          <Link to="/" id="logo-box">
             <img
               src="./netflix_logo.png"
               alt="logo-agenzia"
               className="img-fluid"
             />
-          </Navbar.Brand>
+          </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto d-flex">
-              <Nav.Link href="#" className="nav-item text-light tag-page">
+              <Link
+                className={
+                  location.pathname === `/`
+                    ? `nav-item text-light me-2 text-decoration-none tag-page active`
+                    : `nav-item text-light me-2 text-decoration-none tag-page`
+                }
+                to="/"
+              >
                 Home
-              </Nav.Link>
-              <Nav.Link href="#" className="nav-item text-light tag-page">
+              </Link>
+              <Link
+                className={
+                  location.pathname === `/tvshows`
+                    ? `nav-item text-light me-2 text-decoration-none tag-page active`
+                    : `nav-item text-light me-2 text-decoration-none tag-page`
+                }
+                to="/tvshows"
+              >
                 TV Shows
-              </Nav.Link>
-              <Nav.Link href="#" className="nav-item text-light tag-page">
+              </Link>
+              <Link
+                className={
+                  location.pathname === `/movies`
+                    ? `nav-item text-light me-2 text-decoration-none tag-page active`
+                    : `nav-item text-light me-2 text-decoration-none tag-page`
+                }
+                to="/movies"
+              >
                 Movies
-              </Nav.Link>
-              <Nav.Link href="#" className="nav-item text-light tag-page">
-                Recently Added
-              </Nav.Link>
-              <Nav.Link href="#" className="nav-item text-light tag-page">
+              </Link>
+              <Link
+                className={
+                  location.pathname === `/moviedetails`
+                    ? `nav-item text-light me-2 text-decoration-none tag-page active`
+                    : `nav-item text-light me-2 text-decoration-none tag-page`
+                }
+                to="/moviedetails"
+              >
+                Movie Details
+              </Link>
+              <Link
+                className={
+                  location.pathname === `/mylist`
+                    ? `nav-item text-light me-2 text-decoration-none tag-page active`
+                    : `nav-item text-light me-2 text-decoration-none tag-page`
+                }
+                to="/mylist"
+              >
                 My List
-              </Nav.Link>
+              </Link>
             </Nav>
             <div className="d-flex">
               <form className="d-flex ms-5" role="search">
@@ -144,7 +182,6 @@ const NavbarHeader = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      ;
     </>
   );
 };

@@ -45,7 +45,7 @@ class GalleryMovies extends Component {
     console.log("INVOCATO RENDER");
     return (
       <>
-        <Container fluid>
+        <Container>
           <Row className=" flex-nowrap overflow-x-auto g-3 p-3" id="row">
             {/* spinner per indicare il caricamento delle pagine */}
             {this.state.isLoading && (
