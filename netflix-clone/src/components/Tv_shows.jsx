@@ -86,7 +86,6 @@ const Tv_shows = () => {
                       {movies.Title}
                     </Card.Title>
                     <Card.Text className=" text-light">{movies.Year}</Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                   </Card.Body>
                 </Card>
               </Col>

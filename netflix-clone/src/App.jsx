@@ -40,7 +40,7 @@ function App() {
           }
         />
         <Route
-          path="/moviedetails"
+          path="/moviedetails/:idMovies"
           element={
             <main>
               <div className=" mt-2 mb-5 p-3">
