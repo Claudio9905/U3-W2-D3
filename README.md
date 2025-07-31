@@ -1,2 +1,1 @@
-# U3-W2-D3
-
+Esercizio sulla navigazione statica e parametrica di React sul Progetto Netflix-Clone
